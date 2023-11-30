@@ -21,10 +21,11 @@
     <p><strong>Já me livrei da maldição!</strong></p>
     <script>
         // O window.prompt sempre me retornara uma string, mesmo que eu adicione um número no seu código.
-        var n1 = window.prompt('Digite um número: ') // String
-        var n2 = window.prompt('Digite outro número: ') // String
+        var n1 = Number.parseInt(window.prompt('Digite um número: ')) // String
+        var n2 = Number.parseInt(window.prompt('Digite outro número: ')) // String
         var s = n1 + n2
-        window.alert('A soma dos valores é ' + s) // Concatenação
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
+        // window.alert('A soma dos valores é ' + s) Concatenação
         // (number + number) para adição
         // (string + string) para concatenação
     </script>
