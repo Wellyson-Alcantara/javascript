@@ -17,12 +17,12 @@
     </style>
 </head>
 <body>
-    <!-- O onclick="cliclar()" irá  disparar o evento dentro do HTML, os outros também faram a mesma coisa, também é possível usar dentro do JS. Obs: não é necessário usar os dois (no HTML e JavaScript) ao mesmo tempo. -->
+    <!-- Aqui sera configurado os eventos, o onclick="cliclar()" irá  disparar o evento dentro do HTML, os outros também faram a mesma coisa, também é possível usar dentro do JS. Obs: não é necessário usar os dois (no HTML e JavaScript) ao mesmo tempo. -->
     <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" onmouseup="opçoes()">
         Interaja...
     </div>
 
-    <!-- Aqui também é usado para dispara o código, só que é feito no JavaScript. Obs: não é necessário usar os dois (no HTML e JavaScript) ao mesmo tempo. -->
+    <!-- Aqui será configurado os eventos, aqui também é usado para dispara o código, só que é feito no JavaScript. Obs: não é necessário usar os dois (no HTML e JavaScript) ao mesmo tempo. -->
     <script>
         var a = window.document.getElementById('area')
         a.addEventListener('click', clicar)
