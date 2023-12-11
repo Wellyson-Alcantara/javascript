@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antes de Depois</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <button onclick="ante()">Antecessor e Sucessor</button>
+    <script>
+        function ante() {
+            var numero = parseInt(prompt('Digite um número inteiro qualquer'))
+
+            if (!isNaN(numero)) {
+                window.alert(`Antes de ${numero}, temos o número ${numero - 1}.\nDepois de ${numero}, temos o número ${numero + 1}.`)
+            }else {
+                window.alert('Por favor, digite um número inteiro válido.')
+            }
+        }
+    </script>
+</body>
+</html>
