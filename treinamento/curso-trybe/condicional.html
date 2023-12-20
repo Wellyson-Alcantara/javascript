@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aprendendo IF e ELSE</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Condicionas</h1>
+    <p>Este é apenas um teste de condicionais</p>
+    <script>
+        // O toLowerCase não é uma função global. Você deve chamar essa função no objeto string. Ou seja, prompt deve ser chamado em uma string e depois convertido para minúsculas. Isso foi feito para que não ocorrece algum erro na digitação, ex: acabasse digitando tudo em maiúsculo, assim o código não funcionaria.
+
+
+        let frio = prompt('Está frio? S/N').toLowerCase();
+        if (frio === 'sim') {
+            alert('Saia com o casaco!');
+        } else if (frio === 'não') {
+            alert('Deixe o casaco em casa');
+        } else {
+            prompt('Erro!');
+        }
+
+
+        /* O código a abaixo está momentaneamente inválido para que não atrapalhe os outros.
+        
+        const frutaDisponivel = 'banana';
+
+        if (frutaDisponivel === 'abacate') {
+            console.log('Vitamina de abacate saindo');
+        } else if (frutaDisponivel === 'banana') {
+            console.log('Vitamina de banana saindo')
+        } else {
+            console.log('Suco de ' + frutaDisponivel + ' saindo');
+        }
+
+        */
+
+        /* O código a abaixo está momentaneamente inválido para que não atrapalhe os outros.
+
+        const notaDaPessoaEstudante = 7.5;
+
+        if (notaDaPessoaEstudante >= 8) {
+            console.log('Nota A')
+        } else if (notaDaPessoaEstudante >= 6 && notaDaPessoaEstudante < 8) {
+            console.log('Nota B')
+        } else if (notaDaPessaEstudante >= 4 && notaDaPessoaEstudante < 6) {
+            console.log('Nota C')
+        } else {
+            console.log('Nota D')
+        }
+
+        */
+    </script>
+</body>
+</html>
