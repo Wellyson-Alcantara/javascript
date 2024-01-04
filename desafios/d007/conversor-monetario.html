@@ -1,0 +1,57 @@
+<!--
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$->US$</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+
+        p {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &#x27A1 US$</h1>
+    <button onclick="converter()">Conversor</button>
+    <section id="din">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+
+    <script>
+        let cotaçao = Number(window.prompt('Antes de mais nadas. Quanto está a cotação do dólar agora?'))
+
+        function converter() {
+            let real = Number(window.prompt('Quantos R$ você tem na cateira?'))
+            let res = window.document.getElementById('din')
+            dollar = real / cotaçao
+
+            res.innerHTML = (`<h2>Você possui ${real.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`)
+            res.innerHTML += (`<p>Você pode comprar até ${dollar.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})} Dólares</p>`)
+        }
+    </script>
+</body>
+</html>
