@@ -1,0 +1,60 @@
+<!--
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+
+        p {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="cashback()">Desconto de 10%</button>
+    <section id="des">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
+
+    <script>
+        function cashback() {
+            let produto = window.prompt('Qual é o produto que você está comprando?')
+            let preço = Number(window.prompt(`Qual é o preço de ${produto}?`))
+            let res = window.document.querySelector('section#des')
+
+            let novoPreço = (preço * 10) / 100
+            let desconto = preço - novoPreço 
+
+            res.innerHTML = (`<h2>Calculando desconto de 10% para ${produto}</h2>`)
+            res.innerHTML += (`<p>O preço original era ${preço.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`)
+            res.innerHTML += (`<p>Você acaba de ganhar ${novoPreço.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} de desconto (-10%).</p>`)
+            res.innerHTML += (`<p>No fim, você vai pagar ${desconto.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} no produto ${produto}.</p>`)
+        }
+    </script>
+</body>
+</html>
