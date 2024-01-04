@@ -1,0 +1,60 @@
+<!--
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+        
+        script {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="calculo()">Calcular</button>
+    <section id="bask">
+        <p>Considerando uma equação no formato <strong>ax² + bx + c = 0</strong>, aperte o botão acima para calcular o valor de <strong>&#x394</strong></p>
+    </section>
+
+    <script>
+        function calculo() {
+            let a = Number(window.prompt('Qual o valor de a?'))
+            let b = Number(window.prompt('Qual o valor de b?'))
+            let c = Number(window.prompt('Qual o valor de c?'))
+            let res = window.document.getElementById('bask')
+
+            let valor = (b ** 2) -4 * a * c
+
+            res.innerHTML = ('<h2>Resolvendo Bhaskara</h2>')
+            res.innerHTML += (`<p>A equação atual <strong>${a}x<sup>2</sup> + ${b}x + ${c} = 0</strong></p>`)
+            res.innerHTML += (`<p>O cálculo realizado será <strong>&#x394 = ${b}x<sup>2</sup> - 4 . ${a} . ${c}</strong></p>`)
+            res.innerHTML += (`<p>O valor calculado foi <mark><strong>&#x394 = ${valor}</strong></mark></p>`)
+        }
+    </script>
+</body>
+</html>
