@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Qual o seu País de Origem?</h1>
+    Vivendo em:<input type="text" name="txtpais" id="txtpais" placeholder="Seu País">
+    <input type="submit" value="Enviar" onclick="lugar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function lugar() {
+            let txtp = window.document.getElementById('txtpais')
+            let res = window.document.getElementById('res')
+            let pais = txtp.value // É necessário colocar o (value) para o código funcionar!
+            res.innerHTML = `<p>Vivendo em ${pais}`
+            if (pais.toLocaleLowerCase() == 'brasil') {
+                res.innerHTML += '<p>Você é <strong>BRASILEIRO!</strong></p>'
+            } else {
+                res.innerHTML += '<p>Você é <strong>ESTRANGEIRO!</strong></P>'
+            }
+        }
+    </script>
+</body>
+</html>
