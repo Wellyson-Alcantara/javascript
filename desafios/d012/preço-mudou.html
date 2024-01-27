@@ -1,0 +1,70 @@
+<!--
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele. 
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="calcular()">Verificar</button>
+    <div id="res">
+        <p>Clique no botão acima para analizar a mudança de preço.</p>
+    </div>
+
+    <script>
+        function calcular() {
+            let preçoAntes = Number(window.prompt('Qual era o preço anterior do produto?'))
+            let preçoAtual = Number(window.prompt('Qual o preço atual do produto?'))
+            let res = window.document.getElementById('res')
+
+            if (isNaN(preçoAntes) || isNaN(preçoAtual)) {
+                window.alert('Por favor, informe valores númericos válidos')
+                return
+            }
+
+            let variaçaoAbsoluta = preçoAtual - preçoAntes
+            let variaçaoPercentual = (variaçaoAbsoluta / preçoAntes) * 100
+
+            res.innerHTML = '<h2>Analizando os valores informados</h2>'
+
+            if (preçoAntes < preçoAtual) {
+            res.innerHTML += `<p>O produto custava ${preçoAntes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}  e agora custa ${preçoAtual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`        
+            res.innerHTML += '<p>Hoje o produto está mais caro.</p>'
+            res.innerHTML += `<p>O preço subiu ${variaçaoAbsoluta.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.</p>`
+            res.innerHTML += `<p>Uma variação de ${variaçaoPercentual.toFixed(2)}% pra cima.</p>`
+            } else {
+                res.innerHTML += `<p>O produto custava ${preçoAntes.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}  e agora custa ${preçoAtual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+                res.innerHTML += '<p>Hoje o produto está mais barato.</p>'
+                res.innerHTML += `<p>O preço caiu  ${Math.abs(variaçaoAbsoluta).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} em relação ao preço anterior.</p>`
+                res.innerHTML += `<p>Uma variação de ${Math.abs(variaçaoPercentual.toFixed(2))}% pra baixo.</p>`
+            }    
+        }
+    </script>
+</body>
+</html>
