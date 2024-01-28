@@ -1,0 +1,73 @@
+<!--
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele. 
+-->
+<!DOCTYPE html>
+<html lang="pt.br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="entrar()">Entrar com as notas</button>
+    <div id="res">
+        <p>Clique no botão acima para informar as notas do aluno.</p>
+    </div>
+
+    <script>
+        function entrar() {
+            let nomeAluno = window.prompt('Qual é o nome do aluno?')
+            let n1 = Number(window.prompt(`Primeira nota de ${nomeAluno}:`))
+            let n2 = Number(window.prompt(`Segunda nota de ${nomeAluno}:`))
+            let res = window.document.getElementById('res')
+            let media = (n1 + n2) / 2
+
+            if (nomeAluno === null || nomeAluno.trim() === '') {
+                window.alert('[ERRO] Você não preencheu o campo nome corretamente!')
+                res.innerText = '<p>Clique no botão acima para informar as notas do aluno.</p>'
+                return
+            } else if (isNaN(n1) || isNaN(n2)) {
+                window.alert('[ERRO] você não preencheu o campo notas corretamente!')
+                res.innerText = '<p>Clique no botão acima para informar as notas do aluno.</p>'
+                return
+            }
+
+            res.innerHTML = `<h2>Analizando a situação de ${nomeAluno}</h2>`
+
+            if (media > 6) {
+                res.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong>média é ${media}</strong></p>`
+                res.innerHTML += '<p>Com média acima de 6.0, o aluno está <strong><mark style="background: palegreen; color: rgb(55, 125, 33)">APROVADO</mark></strong></p>'
+            } else if (media >= 3 && media <= 6) {
+                res.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong>média é ${media}</strong></p>`
+                res.innerHTML += '<p>Com média entre 3.0 e 6.0, o aluno está em <strong><mark style="background: #FFFFE3; color: #C3884B">RECUPERÇÃO</mark></strong></p>'
+            } else {
+                res.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong>média é ${media}</strong></p>`
+                res.innerHTML += '<p>Com média abaixo de 3.0, o aluno está <strong><mark style="background: #E28783; color: #7F180B">REPROVADO</mark></strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
