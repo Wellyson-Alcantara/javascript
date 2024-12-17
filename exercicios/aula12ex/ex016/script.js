@@ -3,12 +3,11 @@ function verificar() {
     let ano = data.getFullYear()
     let fano = document.getElementById('txtano')
     let res = document.querySelector('div#res')
-    if (fano.value.length == 0 || Number(fano.value) > ano) {
+    if (fano.value.length == 0 || fano.value > ano) {
         window.alert('Verificar os dados e tente novamente!')
     } else {
         let fsex = document.getElementsByName('radsex')
         let idade = ano - Number(fano.value)
-        res.innerHTML = `Idade calculada: ${idade}`
         let gênero = ''
         let img = document.createElement('img')
         img.setAttribute('id', 'foto')
